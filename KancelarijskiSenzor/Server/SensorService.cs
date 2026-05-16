@@ -6,7 +6,7 @@ namespace Server
 {
     public class SensorService : ISensorService
     {
-        private bool sessionStarted = false;
+        private static bool sessionStarted = false;
 
         public ServiceResponse StartSession(SensorSample meta)
         {
