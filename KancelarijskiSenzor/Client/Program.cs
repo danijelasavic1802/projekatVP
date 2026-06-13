@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.ServiceModel;
+using System.Threading;
 
 namespace Client
 {
@@ -53,6 +54,8 @@ namespace Client
                 {
                     ServiceResponse response = proxy.PushSample(samples[i]);
                     Console.WriteLine($"Red {i + 1}: ACK={response.Ack}, Status={response.Status}");
+
+                    Thread.Sleep(100);
                 }
 
                 ServiceResponse endResponse = proxy.EndSession();
